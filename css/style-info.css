@@ -1,0 +1,523 @@
+/* ========== Reset & Canvas ========== */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fondo */
+}
+
+/* ========== Layout General ========== */
+body {
+  min-height: 100svh;
+  background-color: rgb(15, 23, 42);
+  display: grid;
+  place-content: center;
+  font-size: 1rem;
+}
+.section {
+  text-align: center;
+  padding: 100px 20px;
+}
+h1, h2 {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+}
+p {
+  color: #e0f7fa;
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* ========== Navegación ========== */
+nav {
+  --_clr-txt: rgb(255, 255, 255);
+  --_clr-txt-svg: rgb(147, 158, 184);
+  --_ani-speed: 6s;
+
+  display: flex;
+  justify-content: center;   /* 🔹 centra los botones horizontalmente */
+  align-items: center;       /* 🔹 centra verticalmente dentro de su contenedor */
+  gap: 1rem;
+  font-size: 1.4rem;
+  position: absolute;        /* 🔹 lo fijamos */
+  top: 20px;                 /* 🔹 margen desde arriba */
+  left: 50%;                 /* 🔹 lo movemos al centro */
+  transform: translateX(-50%); /* 🔹 corrección para centrar */
+  width: max-content;        /* 🔹 el ancho se ajusta a los botones */
+  z-index: 10;               /* 🔹 encima del canvas */
+}
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+nav > button {
+  position: relative;
+  display: grid;
+  place-content: center;
+  grid-template-areas: 'stack';
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+nav > button > span {
+  transition: all 300ms ease-in-out;
+  grid-area: stack;
+}
+nav > button > span:last-of-type {
+  margin-top: 0.25rem;
+  transform: scale(0);
+  transition-delay: 0ms;
+}
+nav > button:hover > span:first-of-type {
+  transform: scale(0);
+}
+nav > button:hover > span:last-of-type {
+  transform: scale(1);
+}
+nav > button > svg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  color: var(--_clr-txt-svg);
+}
+nav > button:hover > svg {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: 150ms;
+}
+button svg g {
+  transform-origin: center;
+  animation: rotate var(--_ani-speed) linear infinite;
+}
+
+/* ========== Features List ========== */
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+.features-list li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+.features-list i {
+  margin-right: 8px;
+  color: #1DE9B6;
+}
+
+/* ========== Botón ========== */
+.btn-download {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #42A5F5;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 0 15px rgba(66,165,245,0.6);
+}
+.btn-download:hover {
+  background: #1E88E5;
+  transform: scale(1.05);
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  color: #bbdefb;
+}
+footer .social a {
+  margin: 0 10px;
+  color: #90caf9;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+footer .social a:hover {
+  color: #ffffff;
+}
+
+
+
+/* ========== Animaciones ========== */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+
+}
+
+/* Reset and base styles */
+
+/* CSS Variables */
+:root {
+  --electric-border-color: #42A5F5;
+  --electric-light-color: oklch(from var(--electric-border-color) l c h);
+  --gradient-color: oklch(
+    from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4
+  );
+  --color-neutral-900: oklch(0.185 0 0);
+}
+
+
+/* Main container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* SVG positioning */
+.svg-container {
+  position: absolute;
+}
+
+/* Card container */
+.card-container {
+  padding: 2px;
+  border-radius: 24px;
+  position: relative;
+  background: linear-gradient(
+      -30deg,
+      var(--gradient-color),
+      transparent,
+      var(--gradient-color)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--color-neutral-900),
+      var(--color-neutral-900)
+    );
+}
+
+/* Inner container */
+.inner-container {
+  position: relative;
+}
+
+/* Border layers */
+.border-outer {
+  border: 2px solid rgba(66,165,245,0.6);
+  border-radius: 24px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+}
+
+.main-card {
+  width: 350px;
+  height: 500px;
+  border-radius: 24px;
+  border: 2px solid var(--electric-border-color);
+  margin-top: -4px;
+  margin-left: -4px;
+  filter: url(#turbulent-displace);
+}
+
+/* Glow effects */
+.glow-layer-1 {
+  border: 2px solid rgba(66,165,245,0.6);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1px);
+}
+
+.glow-layer-2 {
+  border: 2px solid var(--electric-light-color);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(4px);
+}
+
+/* Overlay effects */
+.overlay-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 1;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(
+    -30deg,
+    white,
+    transparent 30%,
+    transparent 70%,
+    white
+  );
+}
+
+.overlay-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(
+    -30deg,
+    white,
+    transparent 30%,
+    transparent 70%,
+    white
+  );
+}
+
+/* Background glow */
+.background-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  filter: blur(32px);
+  transform: scale(1.1);
+  opacity: 0.3;
+  z-index: -1;
+  background: linear-gradient(
+    -30deg,
+    var(--electric-light-color),
+    transparent,
+    var(--electric-border-color)
+  );
+}
+
+/* Content container */
+.content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content sections */
+.content-top {
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  padding-bottom: 16px;
+  height: 100%;
+}
+
+.content-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  padding-top: 16px;
+}
+
+/* Scrollbar glass component */
+.scrollbar-glass {
+  background: radial-gradient(
+      47.2% 50% at 50.39% 88.37%,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.04);
+  position: relative;
+  transition: background 0.3s ease;
+  border-radius: 14px;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.scrollbar-glass:hover {
+  background: radial-gradient(
+      47.2% 50% at 50.39% 88.37%,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.08);
+}
+
+.scrollbar-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1px;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.48) 16.73%,
+    rgba(255, 255, 255, 0.08) 30.2%,
+    rgba(255, 255, 255, 0.08) 68.2%,
+    rgba(255, 255, 255, 0.6) 81.89%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Typography */
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.description {
+  opacity: 0.5;
+}
+
+/* Divider */
+.divider {
+  margin-top: auto;
+  border: none;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.1;
+  mask-image: linear-gradient(to right, transparent, black, transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black,
+    transparent
+  );
+}
+
+
+
+.tarjetas {
+  display: flex;
+  gap: 24px; /* espacio entre tarjetas */
+}
+
+/* -------------- AÑADIR / REEMPLAZAR -------------- */
+
+/* Aseguramos que el contenedor de la tarjeta tenga el mismo tamaño que .main-card
+   y que actúe como referencia para posicionamiento absoluto */
+.card-container {
+  position: relative; /* ya lo tienes, reafirmamos */
+  width: 350px;       /* mismo ancho que .main-card */
+  height: 500px;      /* misma altura que .main-card */
+  padding: 2px;
+  border-radius: 24px;
+}
+
+/* Mantener .content-container ocupando toda la tarjeta pero no usar layout que rompa la posición absoluta */
+.content-container {
+  position: absolute;
+  inset: 0;           /* top:0; left:0; right:0; bottom:0; */
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* por defecto desactivamos para no bloquear overlays */
+}
+
+/* permitir interacciones solo en elementos hijos (botones, links) */
+.content-container * {
+  pointer-events: auto;
+}
+
+/* Simplificamos la zona superior (título pequeño / etiqueta) */
+.content-top {
+  padding: 18px 24px 0 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: auto; /* IMPORTANTE: quitar cualquier height:100% o similar */
+}
+
+/* Quitamos el margin-top:auto que movía el botón inconsistemente */
+.title {
+  margin: 0;               /* elimina margin-top:auto */
+  font-size: 36px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;      /* lo fijamos en toda la tarjeta */
+  left: 50%;
+  top: 48%;                /* ajusta este valor para subir/bajar el botón globalmente */
+  transform: translate(-50%, -50%);
+  z-index: 20;             /* por encima de overlays */
+  padding: 0;
+}
+
+/* Ajustamos la descripción para que quede siempre abajo */
+.content-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;            /* separa del borde inferior (ajusta si quieres) */
+  padding: 0 48px;
+  text-align: left;        /* o center si prefieres */
+  pointer-events: auto;
+}
+
+/* Divider: (si lo quieres visible) mantén su posición relativa */
+.divider {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: calc(48% + 28px); /* opcional: evita que la línea choque con el botón */
+  opacity: 0.06;
+  height: 1px;
+}
+
+/* -------------- FIN -------------- */

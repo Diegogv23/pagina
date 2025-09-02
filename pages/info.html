@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>CMS MIG</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>CMS NOAH</title>
+  <link rel="stylesheet" href="../css/style-info.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="icon" href="https://i.postimg.cc/nrBzQkpK/logo-negro.png">
 </head>
@@ -25,16 +25,16 @@
           </svg>
         </button>
 
-        <button type="button" onclick="location.href='../pages/info.html'">
-          <span>Información</span>
-          <span class="material-symbols-outlined" aria-hidden="true">info</span>
+        <button type="button" onclick="location.href='/pages/info.html'">
+          <span>Documentación</span>
+          <span class="material-symbols-outlined" aria-hidden="true">Documentación</span>
           <svg viewBox="0 0 300 300" aria-hidden="true">
             <g>
               <text fill="currentColor">
-                <textPath xlink:href="#circlePath">About</textPath>
+                <textPath xlink:href="#circlePath">Info</textPath>
               </text>
               <text fill="currentColor">
-                <textPath xlink:href="#circlePath" startOffset="50%">About</textPath>
+                <textPath xlink:href="#circlePath" startOffset="50%">info</textPath>
               </text>
             </g>
           </svg>
@@ -63,168 +63,126 @@
         </defs>
       </svg>
 
-       <!-- ===== Hero conciso ===== -->
-      <section class="section hero x-hero" id="hero">
-        <div class="content">
-          <h1>CMS MIG — Gestión de contenidos para educación</h1>
-          <p class="x-sub">
-            Plataforma ligera en PHP para crear aplicativos web académicos con módulos reutilizables, control de acceso
-            y estructura escalable.
-          </p>
-          <ul class="x-badges" style="margin-top:14px">
-            <li>PHP 8.2+</li>
-            <li>MySQL / MariaDB</li>
-            <li>MVC</li>
-            <li>Modular</li>
-          </ul>
+          <main class="main-container">
+  <svg class="svg-container">
+    <!-- tu filtro SVG aquí -->
+  </svg>
+
+  <div class="tarjetas">
+    <!-- Tarjeta 1 -->
+    <div class="card-container">
+      <div class="inner-container">
+        <div class="border-outer">
+          <div class="main-card"></div>
         </div>
-      </section>
-
-      <!-- ===== Participantes ===== -->
-      <section class="section x-section" id="equipo">
-        <div class="content">
-          <h2>Equipo de proyecto</h2>
-          <ul class="x-badges">
-            <li>Diyinger Arley Culma Betancourt</li>
-            <li>Dayana Lizeth Lopez Salinas</li>
-            <li>Lina Mayerli Bohórquez Cifuentes</li>
-            <li>Juan Diego Gutierrez Venegas</li>
-          </ul>
+        <div class="glow-layer-1"></div>
+        <div class="glow-layer-2"></div>
+      </div>
+      <div class="overlay-1"></div>
+      <div class="overlay-2"></div>
+      <div class="background-glow"></div>
+      <div class="content-container">
+        <div class="content-top">
+          <div class="scrollbar-glass">Manual de usuario</div>
+          <button class="title" onclick="descargarManual()">Descargar</button>
         </div>
-      </section>
-
-      <!-- ===== Descripción breve ===== -->
-      <section class="section x-section" id="descripcion">
-        <div class="content">
-          <h2>Descripción</h2>
-          <p>
-            CMS MIG agiliza la creación y administración de sitios y módulos educativos. Permite organizar páginas,
-            gestionar usuarios y roles, y extender funcionalidades mediante componentes configurables, priorizando
-            usabilidad, seguridad básica y buen desempeño.
-          </p>
+        <hr class="divider" />
+        <div class="content-bottom">
+          <p class="description">Aprende a instalar nuestro cms.</p>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <!-- ===== Características clave ===== -->
-      <section class="section x-section" id="caracteristicas">
-        <div class="content">
-          <h2>Características clave</h2>
-          <div class="x-grid">
-            <article class="x-card">
-              <h3>Usuarios y permisos</h3>
-              <p>Roles diferenciados y acceso por secciones.</p>
-            </article>
-            <article class="x-card">
-              <h3>Módulos y plantillas</h3>
-              <p>Componentes reutilizables para acelerar desarrollo.</p>
-            </article>
-            <article class="x-card">
-              <h3>Gestor de páginas</h3>
-              <p>Orden, tipos de contenido y navegación clara.</p>
-            </article>
-            <article class="x-card">
-              <h3>Arquitectura MVC</h3>
-              <p>Código organizado para mantener y escalar.</p>
-            </article>
-            <article class="x-card">
-              <h3>Buenas prácticas</h3>
-              <p>Estructura limpia y seguridad esencial.</p>
-            </article>
-            <article class="x-card">
-              <h3>Extensible</h3>
-              <p>Base lista para nuevos módulos sin romper el núcleo.</p>
-            </article>
-          </div>
+        <script>
+            function descargarManual() {
+            const enlace = document.createElement("a");
+            enlace.href = "../documentos/manual.pdf";
+            enlace.download = "manual.pdf";
+            enlace.click();
+            }
+        </script>
+
+    <!-- Tarjeta 2 -->
+    <div class="card-container">
+      <div class="inner-container">
+        <div class="border-outer">
+          <div class="main-card"></div>
         </div>
-      </section>
-
-      <!-- ===== Galería / Showcase ===== -->
-      <section class="section x-section" id="galeria">
-        <div class="content">
-          <h2>Galería</h2>
-
-          <div class="x-carousel" data-autoplay="5000" aria-roledescription="carousel">
-            <button class="xc-prev" aria-label="Anterior">‹</button>
-
-            <div class="xc-track" role="group">
-              <!-- Cambia estas imágenes por las tuyas cuando quieras -->
-              <figure class="xc-slide is-active">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                  alt="Panel de administración — ejemplo" loading="lazy">
-                <figcaption>Panel de administración</figcaption>
-              </figure>
-
-              <figure class="xc-slide">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                  alt="Panel de administración — ejemplo" loading="lazy">
-                <figcaption>Gestión de usuarios y roles</figcaption>
-              </figure>
-
-              <figure class="xc-slide">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                  alt="Panel de administración — ejemplo" loading="lazy">
-                <figcaption>Módulos y plantillas</figcaption>
-              </figure>
-            </div>
-
-            <button class="xc-next" aria-label="Siguiente">›</button>
-
-            <div class="xc-dots" aria-label="Paginación del carrusel"></div>
-          </div>
+        <div class="glow-layer-1"></div>
+        <div class="glow-layer-2"></div>
+      </div>
+      <div class="overlay-1"></div>
+      <div class="overlay-2"></div>
+      <div class="background-glow"></div>
+      <div class="content-container">
+        <div class="content-top">
+          <div class="scrollbar-glass">Documento técnico</div>
+          <button class="title" onclick="descargarTecnico()">Descargar</button>
         </div>
-      </section>
-
-
-      <!-- ===== Arquitectura y datos (compacto) ===== -->
-      <section class="section x-section" id="arquitectura">
-        <div class="content">
-          <h2>Arquitectura y datos</h2>
-          <div class="x-grid">
-            <article class="x-card">
-              <h3>MVC + patrones</h3>
-              <p>MVC con apoyo de Singleton (BD), Factory (componentes) y Observer (eventos).</p>
-            </article>
-            <article class="x-card">
-              <h3>Modelo de datos</h3>
-              <p><strong>Admin</strong> (credenciales, rol, permisos), <strong>Pages</strong> (páginas y orden),
-                <strong>Modules</strong> (componentes por página) y <strong>Columns</strong> (estructura de tablas).
-              </p>
-            </article>
-            <article class="x-card">
-              <h3>Front-end</h3>
-              <p>HTML/CSS/JS responsive. Base preparada para crecer y optimizar assets.</p>
-            </article>
-          </div>
+        <hr class="divider" />
+        <div class="content-bottom">
+          <p class="description">Acceda a nuestra documentación técnica para consultar 
+            en detalle las especificaciones y funcionalidades del sistema</p>
         </div>
-      </section>
+      </div>
+    </div>
 
+    <script>
+            function descargarTecnico() {
+            const enlace = document.createElement("a");
+            enlace.href = "../documentos/tecnico.pdf";
+            enlace.download = "tecnico.pdf";
+            enlace.click();
+            }
+        </script>
 
-
-      <!-- ===== FAQ corto ===== -->
-      <section class="section x-section" id="faq">
-        <div class="content">
-          <h2>Preguntas frecuentes</h2>
-          <div class="x-faq">
-            <details>
-              <summary>¿Necesita base de datos?</summary>
-              <p>Sí para usuarios, roles y páginas (MySQL/MariaDB). Algunos módulos simples pueden no requerirla.</p>
-            </details>
-            <details>
-              <summary>¿Se puede personalizar?</summary>
-              <p>Sí. La arquitectura modular permite añadir/editar componentes sin tocar el núcleo.</p>
-            </details>
-            <details>
-              <summary>¿Es adaptable a móviles?</summary>
-              <p>El front es responsive; el proyecto puede evolucionar a PWA en el futuro.</p>
-            </details>
-          </div>
+    <!-- Tarjeta 3 -->
+    <div class="card-container">
+      <div class="inner-container">
+        <div class="border-outer">
+          <div class="main-card"></div>
         </div>
-      </section>
-     
+        <div class="glow-layer-1"></div>
+        <div class="glow-layer-2"></div>
+      </div>
+      <div class="overlay-1"></div>
+      <div class="overlay-2"></div>
+      <div class="background-glow"></div>
+      <div class="content-container">
+        <div class="content-top">
+          <div class="scrollbar-glass">Otro documento</div>
+          <button class="title" onclick="descargarTecnico()">Descargar</button>
+        </div>
+        <hr class="divider" />
+        <div class="content-bottom">
+          <p class="description">In case you'd like to emphasize something very dramatically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+            function descargarManual() {
+            const enlace = document.createElement("a");
+            enlace.href = "../documentos/manual.pdf";
+            enlace.download = "manual.pdf";
+            enlace.click();
+            }
+        </script>
+</main>
+
+<svg width="0" height="0">
+  <filter id="turbulent-displace">
+    <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turb" />
+    <animate xlink:href="#turb" attributeName="baseFrequency" dur="8s" values="0.02;0.05;0.02" repeatCount="indefinite" />
+    <feDisplacementMap in="SourceGraphic" in2="turb" scale="20" />
+  </filter>
+</svg>
+            
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 CMS Builder</p>
+      <p>&copy; 2025 N.O.A.H CMS</p>
       <div class="social">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
