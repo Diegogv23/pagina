@@ -1,64 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>CMS MIG</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="https://i.postimg.cc/nrBzQkpK/logo-negro.png">
 </head>
 <body>
+  <!-- Sección del océano con overlay -->
+  <section class="ocean-section">
+    <canvas id="ocean"></canvas>
+    <div class="overlay">
 
-  <!-- Hero Section -->
-  <section class="section hero" id="hero">
-    <div class="content">
-      <h1>Construye tu web sin límites</h1>
-      <p>CMS Builder te permite crear sitios web profesionales sin escribir una sola línea de código.</p>
-      <a href="#" class="btn-download">Descargar ahora</a>
+      <!-- Navegación -->
+      <nav>
+        <button type="button" title="Home" onclick="location.href='../index.html'">
+          <span>Inicio</span>
+          <span class="material-symbols-outlined" aria-hidden="true">Home</span>
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <g>
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">Inicio</textPath>
+              </text>
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath" startOffset="50%">Inicio</textPath>
+              </text>
+            </g>
+          </svg>
+        </button>
+
+        <button type="button" onclick="location.href='/pages/info.html'">
+          <span>Información</span>
+          <span class="material-symbols-outlined" aria-hidden="true">info</span>
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <g>
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath">About</textPath>
+              </text>
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath" startOffset="50%">About</textPath>
+              </text>
+            </g>
+          </svg>
+        </button>
+
+        <button type="button" onclick="location.href='/pages/contact.html'">
+          <span>Contacto</span>
+          <span class="material-symbols-outlined" aria-hidden="true">email</span>
+          <svg viewBox="0 0 300 300">
+            <g>
+              <text fill="currentColor" aria-hidden="true">
+                <textPath xlink:href="#circlePath">Contact</textPath>
+              </text>
+              <text fill="currentColor">
+                <textPath xlink:href="#circlePath" startOffset="50%">Contact</textPath>
+              </text>
+            </g>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- SVG para el texto circular -->
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" width="0" height="0">
+        <defs>
+          <path id="circlePath" d="M 150, 150 m -50, 0 a 50,50 0 0,1 100,0 a 50,50 0 0,1 -100,0" />
+        </defs>
+      </svg>
+
+      <!-- Hero -->
+      <section class="section hero" id="hero">
+        <div class="content">
+          <h1>Construye tu web sin límites</h1>
+          <p>CMS Builder te permite tener la base de tu proyecto en minutos</p>
+          <a href="cms.zip" class="btn-download" download>Descargar ahora</a>
+        </div>
+      </section>
+
+      <!-- Características -->
+      <section class="section features" id="features">
+        <div class="content fade-in">
+          <h2>Características</h2>
+          <ul class="features-list">
+            <li><i class="fas fa-cogs"></i> Gestor de usuarios y permisos</li>
+            <li><i class="fas fa-mobile-alt"></i> Autenticador de usuarios</li>
+            <li><i class="fas fa-lock"></i> Gestor de páginas</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </section>
 
-  <!-- Características -->
-  <section class="section features" id="features">
-    <div class="content fade-in">
-      <h2>Características</h2>
-      <ul class="features-list">
-        <li><i class="fas fa-cogs"></i>Constructor visual intuitivo</li>
-        <li><i class="fas fa-mobile-alt"></i>Diseño responsive automático</li>
-        <li><i class="fas fa-lock"></i>Seguridad avanzada integrada</li>
-      </ul>
-    </div>
+  <!-- Sección Parallax -->
+  <section class="parallax-section">
+    <!-- Sobre nosotros -->
+    <section class="section benefits" id="benefits">
+      <div class="content fade-in">
+        <h2>Sobre nosotros</h2>
+        <p>
+          Somos un equipo de desarrolladores dedicados a crear soluciones tecnológicas que simplifican la gestión digital. 
+          Nuestro CMS Builder nace con el propósito de ofrecer una herramienta intuitiva, flexible y segura que permita a 
+          cualquier usuario crear, administrar y personalizar aplicativos web de manera eficiente.
+          Creemos en la innovación, la accesibilidad y el aprendizaje continuo como pilares para impulsar la transformación digital.
+        </p>
+      </div>
+    </section>
+
+    <!-- Descarga -->
+    <section class="section download" id="download">
+      <div class="content fade-in">
+        <h2>Descarga desde GitHub</h2>
+        <a href="https://github.com/Diegogv23/cms" class="btn-download animated">Descargar ahora</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 CMS Builder</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </footer>
   </section>
 
-  <!-- Beneficios -->
-  <section class="section benefits" id="benefits">
-    <div class="content fade-in">
-      <h2>Beneficios</h2>
-      <p>“Desde que uso CMS Builder, crear sitios web es tan fácil como arrastrar y soltar.”</p>
-      <p>“Ideal para emprendedores, agencias y freelancers.”</p>
-    </div>
-  </section>
-
-  <!-- Descarga -->
-  <section class="section download" id="download">
-    <div class="content fade-in">
-      <h2>¿Listo para empezar?</h2>
-      <a href="#" class="btn-download animated">Descargar ahora</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 CMS Builder</p>
-    <div class="social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

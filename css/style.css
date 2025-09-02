@@ -1,0 +1,169 @@
+/* ========== Reset & Canvas ========== */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fondo */
+}
+
+/* ========== Layout General ========== */
+body {
+  min-height: 100svh;
+  background-color: rgb(15, 23, 42);
+  display: grid;
+  place-content: center;
+  font-size: 1rem;
+}
+.section {
+  text-align: center;
+  padding: 100px 20px;
+}
+h1, h2 {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+}
+p {
+  color: #e0f7fa;
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* ========== Navegación ========== */
+nav {
+  --_clr-txt: rgb(255, 255, 255);
+  --_clr-txt-svg: rgb(147, 158, 184);
+  --_ani-speed: 6s;
+
+  display: flex;
+  justify-content: center;   /* 🔹 centra los botones horizontalmente */
+  align-items: center;       /* 🔹 centra verticalmente dentro de su contenedor */
+  gap: 1rem;
+  font-size: 1.4rem;
+  position: absolute;        /* 🔹 lo fijamos */
+  top: 20px;                 /* 🔹 margen desde arriba */
+  left: 50%;                 /* 🔹 lo movemos al centro */
+  transform: translateX(-50%); /* 🔹 corrección para centrar */
+  width: max-content;        /* 🔹 el ancho se ajusta a los botones */
+  z-index: 10;               /* 🔹 encima del canvas */
+}
+
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+nav > button {
+  position: relative;
+  display: grid;
+  place-content: center;
+  grid-template-areas: 'stack';
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+nav > button > span {
+  transition: all 300ms ease-in-out;
+  grid-area: stack;
+}
+nav > button > span:last-of-type {
+  margin-top: 0.25rem;
+  transform: scale(0);
+  transition-delay: 0ms;
+}
+nav > button:hover > span:first-of-type {
+  transform: scale(0);
+}
+nav > button:hover > span:last-of-type {
+  transform: scale(1);
+}
+nav > button > svg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  color: var(--_clr-txt-svg);
+}
+nav > button:hover > svg {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: 150ms;
+}
+button svg g {
+  transform-origin: center;
+  animation: rotate var(--_ani-speed) linear infinite;
+}
+
+/* ========== Features List ========== */
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+.features-list li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+.features-list i {
+  margin-right: 8px;
+  color: #1DE9B6;
+}
+
+/* ========== Botón ========== */
+.btn-download {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #42A5F5;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 0 15px rgba(66,165,245,0.6);
+}
+.btn-download:hover {
+  background: #1E88E5;
+  transform: scale(1.05);
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  color: #bbdefb;
+}
+footer .social a {
+  margin: 0 10px;
+  color: #90caf9;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+footer .social a:hover {
+  color: #ffffff;
+}
+
+/* ========== Animaciones ========== */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
