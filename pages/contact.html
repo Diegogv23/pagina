@@ -64,7 +64,19 @@
       </svg>
 
  
-     
+     <!-- Vamos a hacer magia -->
+      <section class="contacto">
+  <h2>Contáctanos</h2>
+  <p>Déjanos tu mensaje y nos pondremos en contacto contigo lo antes posible.</p>
+
+  <form action="../php/enviar.php" method="POST" class="contact-form">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="correo" placeholder="Tu correo" required>
+    <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
+
 
     <!-- Footer -->
     <footer>
